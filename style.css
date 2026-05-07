@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #282c34;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #abb2bf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-container {
+  background-color: #21252b;
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(171, 178, 191, 0.05);
+}
+.todo-container header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.todo-container header h1 {
+  color: #61afef;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+.todo-form .todo-input {
+  flex: 1;
+  background: #1b1e23;
+  border: 1px solid #181a1f;
+  padding: 12px 15px;
+  border-radius: 6px;
+  color: #abb2bf;
+  outline: none;
+  transition: border 0.3s ease;
+}
+.todo-form .todo-input:focus {
+  border-color: #61afef;
+}
+.todo-form .todo-input::placeholder {
+  color: rgba(171, 178, 191, 0.4);
+}
+.todo-form .todo-button {
+  background-color: #98c379;
+  color: #282c34;
+  border: none;
+  padding: 0 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+.todo-form .todo-button:hover {
+  opacity: 0.9;
+}
+
+.todo-list {
+  list-style: none;
+}
+.todo-list .todo-item {
+  background: rgb(39.6434210526, 44.4486842105, 51.6565789474);
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 4px solid #61afef;
+  transition: transform 0.2s;
+}
+.todo-list .todo-item:hover {
+  transform: translateX(5px);
+}
+.todo-list .todo-item.completed {
+  border-left-color: rgba(171, 178, 191, 0.2);
+  opacity: 0.6;
+}
+.todo-list .todo-item.completed .todo-text {
+  text-decoration: line-through;
+}
+.todo-list .todo-item .delete-btn {
+  background: transparent;
+  border: none;
+  color: #e06c75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.todo-list .todo-item .delete-btn:hover {
+  color: rgb(232.8820224719, 150.1179775281, 156.5393258427);
+}
+
+/*# sourceMappingURL=style.css.map */

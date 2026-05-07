@@ -1,0 +1,128 @@
+// Палитра One Dark
+$bg-color: #282c34;
+$container-bg: #21252b;
+$text-main: #abb2bf;
+$accent-blue: #61afef;
+$accent-green: #98c379;
+$accent-red: #e06c75;
+$input-bg: #1b1e23;
+$border-color: #181a1f;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $bg-color;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: $text-main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-container {
+  background-color: $container-bg;
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba($text-main, 0.05);
+
+  header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    h1 {
+      color: $accent-blue;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2rem;
+
+  .todo-input {
+    flex: 1;
+    background: $input-bg;
+    border: 1px solid $border-color;
+    padding: 12px 15px;
+    border-radius: 6px;
+    color: $text-main;
+    outline: none;
+    transition: border 0.3s ease;
+
+    &:focus {
+      border-color: $accent-blue;
+    }
+
+    &::placeholder {
+      color: rgba($text-main, 0.4);
+    }
+  }
+
+  .todo-button {
+    background-color: $accent-green;
+    color: $bg-color;
+    border: none;
+    padding: 0 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.todo-list {
+  list-style: none;
+
+  .todo-item {
+    background: lighten($container-bg, 3%);
+    margin-bottom: 10px;
+    padding: 12px 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid $accent-blue;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+
+    &.completed {
+      border-left-color: rgba($text-main, 0.2);
+      opacity: 0.6;
+
+      .todo-text {
+        text-decoration: line-through;
+      }
+    }
+
+    .delete-btn {
+      background: transparent;
+      border: none;
+      color: $accent-red;
+      font-size: 1.2rem;
+      cursor: pointer;
+      line-height: 1;
+
+      &:hover {
+        color: lighten($accent-red, 10%);
+      }
+    }
+  }
+}
