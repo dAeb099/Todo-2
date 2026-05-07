@@ -4,13 +4,20 @@ const todoList = document.getElementById("todo-list");
 
 let todos = [];
 
-function addTodo(text) {
+function renderTodo(text) {
   todoList.innerHTML += `
-   <li class="todo-item">
+    <li class="todo-item">
       <span class="todo-text">${text}</span>
       <button class="delete-btn">×</button>
-   </li>
+    </li>
   `;
+}
+
+function addTodo() {
+  todoList.innerHTML = "";
+  todos.forEach((todo) => {
+    renderTodo(todo.text);
+  });
 }
 
 form.addEventListener("submit", function (e) {
