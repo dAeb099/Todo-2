@@ -6,13 +6,21 @@ let todos = [];
 
 function renderTodo(todo) {
   todoList.innerHTML += `
-    <li class="todo-item" id="todo-${todo.id}">
-      <span class="todo-text ${todo.isCompleted ? "completed" : ""}">${todo.text}</span>
+    <li class="todo-item ${todo.isCompleted ? "completed" : ""}" id="todo-${todo.id}">
+      <span class="todo-text" onclick="{
+        toggleComplete(${todo.id})
+      }">${todo.text}</span>
       <button class="delete-btn" onclick="{
         deleteTodo(${todo.id})
       }">×</button>
     </li>
   `;
+}
+
+function toggleComplete(id) {
+  const todo = todos.find((todo) => todo.id === id);
+  todo.isCompleted = !todo.isCompleted;
+  addTodo();
 }
 
 function deleteTodo(id) {
