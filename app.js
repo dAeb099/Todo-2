@@ -16,9 +16,8 @@ function renderTodo(todo) {
 }
 
 function deleteTodo(id) {
-  let pressedTodo = document.getElementById(`todo-${id}`);
-  pressedTodo.remove();
-  todos.splice(id, id);
+  todos = todos.filter((todo) => todo.id !== id);
+  addTodo();
 }
 
 function addTodo() {
